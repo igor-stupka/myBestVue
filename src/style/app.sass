@@ -1,0 +1,54 @@
+@import "./variables"
+@import "./stylereset"
+@import "./fonts"
+
+#app.light
+	--bg: #fff
+	--header: var(--pink)
+	--textNormal: #222
+	--textTitle: #222
+	--textLink: #d23669
+
+#app.dark
+	--bg: #282c35
+	--header: #fff
+	--textNormal: hsla(0,0%,100%,0.88)
+	--textTitle: #fff
+	--textLink: var(--pink)
+#app
+	color: var(--textNormal)
+	background-color: var(--bg)
+	--pink: #ffa7c4
+	font-family: 'Montserrat'
+	font-weight: 400
+	font-size: 16px
+	min-height: 100vh
+	width: 100%
+button
+	color: var(--textNormal)
+
+
+.container
+	max-width: 1255px
+	width: 100%
+	padding: 0 15px
+	margin: 0 auto
+
+.slide-enter-active 
+		animation: slideIn $time
+
+.slide-leave-active 
+	animation: slideOut $time
+
+@keyframes slideIn
+	from
+		opacity: 0
+	to
+		opacity: 1
+
+@keyframes slideOut
+	from
+		opacity: 1
+	to
+		opacity: 0
+
