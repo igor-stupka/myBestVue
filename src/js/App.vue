@@ -2,6 +2,8 @@
 
 	#app(:class="darkTheme ? 'dark' : 'light'",
 		 v-scroll="handleScroll")
+		.progressBar
+			.progressBar__inner(v-bind:style="{width: scrollProgress}")
 		.container
 			header
 				div(v-for="(t, langName) in $i18n.messages",
@@ -39,6 +41,39 @@
 			br
 			br
 			br
+			br
+			br
+			br
+			h1 Hello
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			h1 Bro!
+				br
 			br
 			br
 			br
@@ -89,7 +124,8 @@
 			return {
 				darkTheme: false,
 				I18N,
-				offsetY: 0
+				offsetY: 0,
+				scrollProgress: ''
 			}
 		},
 		methods: {
@@ -104,9 +140,9 @@
 					if (localStorage.darkTheme)
 						this.darkTheme = (localStorage.darkTheme === 'true');
 				}
-				this.themeMetaTag();
+				this.themeMetaTagChanger();
 			},
-			themeMetaTag() {
+			themeMetaTagChanger() {
 				let metaThemes = [...document.querySelectorAll('.meta-theme-color')];
 
 				metaThemes.forEach(meta => {
@@ -135,19 +171,24 @@
 			},
 			handleScroll() {
 				this.offsetY = window.scrollY;
+				this.changeScrollProgress();
+			},
+			changeScrollProgress() {
+				let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+				let scrolled = Math.round((this.offsetY / height) * 100);
+
+				this.scrollProgress =  scrolled + "%";
 			}
 		},
 		mounted() {
 			this.loadLanguage();
 			this.loadTheme();
-
-
 		},
 		watch: {
 			darkTheme(newTheme) {
 				// add selected theme to localStorage
 				localStorage.darkTheme = newTheme;
-				this.themeMetaTag();
+				this.themeMetaTagChanger();
 			}
 		}
 	}
