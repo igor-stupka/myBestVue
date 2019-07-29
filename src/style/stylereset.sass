@@ -4,20 +4,28 @@
 	margin: 0
 	padding: 0
 	border: none
-	outline: none
 	background: none
 	text-decoration: none
 	&::before,
 	&::after
 		box-sizing: border-box
+	&:focus
+		outline: 2px dotted var(--textLink)
+		outline-offset: 2px
 a, button
 	cursor: pointer
+a
+	color: var(--textLink)
+	&:hover
+		text-decoration: underline
+b
+	font-weight: 500
 img
 	max-width: 100%
-
-@media screen and (prefers-reduced-motion: reduce), (update: slow)
-	*, *::before, *::after
-		animation-duration: 0.01s !important
-		animation-iteration-count: 1 !important
-		transition-duration: 0s !important
-		scroll-behavior: auto !important
+body
+	&.reduce-motions
+		*, *::before, *::after
+			animation-duration: 0.01s !important
+			animation-iteration-count: 1 !important
+			transition-duration: 0s !important
+			scroll-behavior: auto !important
