@@ -28,56 +28,57 @@
 					b: a(href="https://media.1plus1.ua/" target="_blank") media.1plus1.ua
 				br
 				span
-					b: a(href="#") #webcare
+					b: a(href="https://twitter.com/search?q=%23webUserCare" target="_blank") #webUserCare
+					span  and&nbsp;
+					|
+					b: a(href="https://twitter.com/search?q=%23%D0%B2%D0%B5%D0%B1%D1%82%D1%83%D1%80%D0%B1%D0%BE%D1%82%D0%B0" target="_blank") #вебтурбота&nbsp;
 					|  ambassador
-						
-							
 					
 		.container
 			main.main
 				section.about
 					h2 About
 					div
-						//- img(src="../img/igor-stupka.jpg", alt="igor stupka").about__photo
+						<!--img(src="../img/igor-stupka.jpg", alt="igor stupka").about__photo-->
 						p Hi! 👊🏻 I'm a frontend developer from Kyiv. I'm specialized in HTML, accessibility, performance, and CSS layout and architecture. 
 						p If you want to get in touch, write me an 
 							b: a(href="mailto:igorstupka1@gmail.com") email
 							|  or add me on 
 							b: a(href="tg://resolve?domain=igor-stop") Telegram
 							| .
-							
+					h2 Activity
+					h3: a(href="#" target="_blank") Twitter (personal)
 
-				//- section.articles
-				//- 	h2 articles
-				//- 	ul.articles__list
-				//- 		li.articles__article
-				//- 			h4: a(href="#") How I stopped worrying and made a perfect gulp-file
+
 
 				section.contacts
 					h2 Let's be friends
 					ul.contacts__list
 						li.contacts__place
-							h3: a(href="#" target="_blank") Twitter
+							h3: a(href="https://twitter.com/igor_stop" target="_blank") Twitter (personal)
 							p code, modernism, open-mindedness
 						li.contacts__place
-							h3: a(href="#" target="_blank") GitHub
+							h3: a(href="https://twitter.com/EatPrayFrontend" target="_blank") Twitter (about frontend)
+							p tricks, hints, opinion
+						li.contacts__place
+							h3: a(href="https://github.com/igor-stupka/" target="_blank") GitHub
 							p interesting and not very projects
 						li.contacts__place
-							h3: a(href="#" target="_blank") Instagram 
+							h3: a(href="https://www.instagram.com/igor_stop/" target="_blank") Instagram
 							p something that misses the Twitter
-		.lang
-			ul.lang__list
-				li(v-for="(t, langName) in $i18n.messages"
-				   class="lang__item")
-					input(type="radio"
-					v-model="I18N.locale"
-					@change="changeLanguage"
-					:value="langName"
-					:id="'input-' + langName"
-					class="lang__input")
+			.lang
+				ul.lang__list
+					li(v-for="(t, langName) in $i18n.messages"
+					   class="lang__item")
+						input(type="radio"
+						v-model="I18N.locale"
+						@change="changeLanguage"
+						:value="langName"
+						:id="'input-' + langName"
+						class="lang__input")
 
-					label(:for="'input-' + langName" 
-					class="lang__label") {{ langName }}					
+						label(:for="'input-' + langName" 
+						class="lang__label") {{ langName }}
 
 
 </template>

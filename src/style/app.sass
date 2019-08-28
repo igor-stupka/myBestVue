@@ -5,33 +5,34 @@
 @import "./fonts"
 
 #app.light
+	--bg: #282c35
+	--textNormal: hsla(0,0%,100%,0.88)
+	--textTitle: #fff
+	--textLink: var(--pink)
+
+
+#app.dark
 	--bg: #fff
 	--textNormal: #222
 	--textTitle: #222
-	--textLink: #06612a
+	--textLink: #d23669
 
-#app.dark
-	--bg: #282c35
-	--header: #fff
-	--textNormal: hsla(0,0%,100%,0.88)
-	--textTitle: #fff
-	--textLink: #689877
 #app
 	color: var(--textNormal)
 	background-color: var(--bg)
-	font-family: $mainFont, 'Segoe UI', 'Roboto Slab', 'Droid Serif', 'AvenirNext', 'Avenir', 'Georgia', sans-serif
-	font-weight: 400
-	font-size: 16px
+	font: 400 16px/1.5 $mainFont, 'Segoe UI', 'Roboto Slab', 'Droid Serif', 'AvenirNext', 'Avenir', 'Georgia', sans-serif
 	min-height: 100vh
 	width: 100%
 	overflow-x: hidden
 	transition: all $time $tFunc
+	--pink: #ffa7c4
 
 .container
 	max-width: 1255px
 	width: 100%
 	padding: 0 15px
 	margin: 0 auto
+	position: relative
 
 .theme
 	$this: &
@@ -46,8 +47,7 @@
 					left: 27px
 			&:focus
 				& + #{$this}__label::before
-					box-shadow: 0 0 2px 3px #689877
-
+					box-shadow: 0 0 2px 3px var(--pink)
 		&label
 			display: block
 			width: 50px
@@ -85,12 +85,12 @@
 			display: flex
 			align-items: center
 			justify-content: space-between
-		&nav
-			
 		&name 
 			font-weight: 900
 			+responsive-font(5vw, 30px, 70px)
+
 .main
+	position: relative
 	display: grid
 	grid-template-columns: 1fr 1fr
 	grid-gap: 50px 80px
@@ -104,12 +104,12 @@ h3
 	margin-bottom: 3px
 
 .lang
-	$this: &
-	position: fixed
-	bottom: 30px
-	left: 20px
+	display: inline-block
+	margin-bottom: 30px
 	&:focus-within
 		outline: 3px dotted var(--textLink)
+
+	$this: &	
 	&__			
 		&input
 			position: absolute
@@ -141,6 +141,7 @@ h3
 			border-radius: 50%
 			-webkit-shape-outside: circle()
 			shape-outside: circle()
+
 .contacts
 	&__
 		&place
