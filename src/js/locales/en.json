@@ -1,5 +1,20 @@
 {
   "changeTheme": "Change theme",
   "firstname": "Igor",
-  "lastname": "Stupka"
+  "lastname": "Stupka",
+  "work": "Frontend developer in ",
+  "push": "Ambassador of ",
+  "and": " and ",
+  "about": "About",
+  "about-text": "Hi! 👊🏻 I'm a frontend developer from Kyiv. I'm specialized in performance, accessibility and web site speed.",
+  "contact": "If you want to get in touch, write me an ",
+  "orAddMe": " or add me in ",
+  "meet": "Let's be friends",
+  "personal": "personal",
+  "tw1": "code, modernism, open-mindedness",
+  "tw2": "tricks, hints, opinion",
+  "aboutFrnd": "about frontend",
+  "gh": "interesting and not very projects",
+  "ig": "something that misses the Twitter",
+  "principles": " principles"
 }
