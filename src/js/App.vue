@@ -7,7 +7,7 @@
 
 			.container
 				.header__inner
-				
+
 					h1.header__name {{ $t('firstname') }} {{ $t('lastname') }}
 
 					div.theme
@@ -33,7 +33,6 @@
 					b: a(href="https://twitter.com/search?q=%23%D0%B2%D0%B5%D0%B1%D1%82%D1%83%D1%80%D0%B1%D0%BE%D1%82%D0%B0" target="_blank") #вебтурбота
 					span {{ $t('principles') }}
 
-					
 		.container
 			main.main
 				section.about
@@ -46,7 +45,6 @@
 							| {{ $t('orAddMe') }}
 							b: a(href="tg://resolve?domain=igor-stop") Telegram
 							| .
-
 
 
 
@@ -63,11 +61,15 @@
 							h3: a(href="https://github.com/igor-stupka/" target="_blank") GitHub
 							p {{ $t('gh') }}
 						li.contacts__place
+							h3: a(href="https://codepen.io/i-stupka/" target="_blank") CodePen
+							p {{ $t('cp') }}
+						li.contacts__place
 							h3: a(href="https://www.instagram.com/igor_stop/" target="_blank") Instagram
 							p {{ $t('ig') }}
-						li.contacts__place
-							h3: a(href="https://www.linkedin.com/in/igor-stupka-500868154/" target="_blank") LinkedIn
-							p {{ $t('ig') }}
+						<!--li.contacts__place-->
+							<!--h3: a(href="https://www.linkedin.com/in/igor-stupka-500868154/" target="_blank") LinkedIn-->
+							<!--p {{ $t('li') }}-->
+
 			.lang
 				ul.lang__list
 					li(v-for="(t, langName) in $i18n.messages"
@@ -102,7 +104,6 @@
 
 				if (darkOS) {
 					this.darkTheme = true;
-					alert('dark themeeeee!!!!!!');
 				} else {
 					// use previously theme
 					if (localStorage.darkTheme)

@@ -24,7 +24,6 @@ img
 	max-width: 100%
 
 body
-	-webkit-font-smoothing: antialiased
 	&.reduce-motions
 		*, *::before, *::after
 			animation-duration: 0.01s !important
@@ -33,5 +32,6 @@ body
 			scroll-behavior: auto !important
 
 @media print
-	a[href]::after
-		content: " (" attr(href) ")"
+	a[href]:not([href='']):not([href^='#'])
+		&::after
+			content: " (" attr(href) ")" !important

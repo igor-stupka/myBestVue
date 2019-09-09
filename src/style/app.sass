@@ -25,7 +25,13 @@
 	width: 100%
 	overflow-x: hidden
 	transition: all $time $tFunc
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	-webkit-tap-highlight-color: transparent
 	--pink: #ffa7c4
+	@media screen and (max-width: 1024px)
+		padding-bottom: 20px
+		font-size: 13px
 
 .container
 	max-width: 1255px
@@ -94,6 +100,8 @@
 	display: grid
 	grid-template-columns: 1fr 1fr
 	grid-gap: 50px 80px
+	@media screen and (max-width: 1024px)
+		grid-template-columns: 1fr
 
 h2
 	+responsive-font(4vw, 28px, 45px)
@@ -110,6 +118,8 @@ h3
 	left: 20px
 	&:focus-within
 		outline: 3px dotted var(--textLink)
+	@media screen and (max-width: 1024px)
+		position: static
 	$this: &	
 	&__			
 		&input
@@ -147,3 +157,5 @@ h3
 	&__
 		&place
 			margin-bottom: 20px
+			
+
